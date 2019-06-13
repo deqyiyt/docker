@@ -1,0 +1,61 @@
+# docker安装gitlab
+docker run \
+--restart=always \
+--name hujz.gitlab \
+--network hujz \
+-v /root/gitlab:/etc/gitlab \
+-v /data/gitlab/opt:/var/opt/gitlab \
+-v /data/gitlab/backups:/var/opt/gitlab/backups \
+-v /etc/localtime:/etc/localtime:ro \
+-d beginor/gitlab-ce:10.7.3-ce.0
+
+# 关闭并删除gitlab，用于修改配置文件后再启动
+docker stop hujz.gitlab
+docker rm hujz.gitlab
+
+# 备份gitlab生成的gitlab.rb
+cp gitlab/gitlab.rb ./gitlab.rb
+
+# 删除docker生成的/root/gitlab文件夹内容
+rm -rf ./gitlab/*
+
+# 修改配置文件并移植
+mv gitlab.rb ./gitlab/
+vim /root/gitlab/gitlab.rb
+external_url 'http://git.hujiuzhou.com'
+unicorn['worker_processes'] = 2
+sidekiq['concurrency'] = 25
+sidekiq['listen_port'] = 8015
+nginx['listen_port'] = 8015
+nginx['listen_https'] = false
+# 配置发送邮件
+gitlab_rails['smtp_enable'] = true
+gitlab_rails['smtp_address'] = "smtp.qq.com"
+gitlab_rails['smtp_port'] = 465
+gitlab_rails['smtp_user_name'] = "89402437@qq.com"
+gitlab_rails['smtp_password'] = "qjneegsstjgbbiji"
+gitlab_rails['smtp_domain'] = "https://mail.qq.com"
+gitlab_rails['smtp_authentication'] = "login"
+gitlab_rails['smtp_enable_starttls_auto'] = true
+gitlab_rails['smtp_tls'] = true
+#postgresql 配置，如果使用mysql需要关闭
+postgresql['shared_buffers'] = "256MB"
+postgresql['max_worker_processes'] = 8
+
+# 修改启动脚本并启动
+docker run \
+--restart=always \
+--name hujz.gitlab \
+--network hujz \
+-v /root/gitlab/gitlab.rb:/etc/gitlab/gitlab.rb \
+-v /data/gitlab/opt:/var/opt/gitlab \
+-v /data/gitlab/backups:/var/opt/gitlab/backups \
+-v /etc/localtime:/etc/localtime:ro \
+-d beginor/gitlab-ce:10.7.3-ce.0
+
+
+# 通过docker备份gitlab
+docker exec -i hujz.gitlab gitlab-rake gitlab:backup:create
+
+# 登录
+修改root用户密码

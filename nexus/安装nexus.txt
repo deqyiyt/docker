@@ -1,0 +1,15 @@
+docker run -d --name hujz.nexus \
+--restart=always \
+--network hujz \
+-v /data/nexus:/nexus-data \
+-v /etc/localtime:/etc/localtime:ro \
+sonatype/nexus3:3.8.0
+
+# 修改jenkins目录权限
+chmod 777 /data/nexus
+
+# 重启jenkins
+docker restart hujz.nexus
+
+默认用户名密码
+admin	admin123

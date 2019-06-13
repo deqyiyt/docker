@@ -1,0 +1,22 @@
+# 启动jenkins
+docker run \
+--restart=always \
+--name hujz.jenkins \
+--network hujz \
+-v /data/jenkins:/var/jenkins_home \
+-v /etc/localtime:/etc/localtime:ro \
+-e JAVA_OPTS=-Duser.timezone=Asia/Shanghai \
+-d jenkins/jenkins:2.179
+
+# 修改jenkins目录权限
+chown -R 1000 /data/jenkins
+
+# 重启jenkins
+docker restart hujz.jenkins
+
+
+Docker plugin
+docker-build-step
+Locale plugin
+Publish Over SSH
+Zentimestamp plugin

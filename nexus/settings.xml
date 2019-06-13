@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
+http://maven.apache.org/xsd/settings-1.0.0.xsd">
+	<localRepository>D:/ciserver/repo</localRepository>
+	<pluginGroups>
+		<pluginGroup>org.mortbay.jetty</pluginGroup>
+	</pluginGroups>
+	<mirrors>
+		<mirror>
+			<id>nexus</id>
+			<mirrorOf>public-snapshots</mirrorOf>
+			<url>https://nexus.hujiuzhou.com/repository/public/</url>
+		</mirror>
+	</mirrors>
+
+	<profiles>
+		<profile>
+			<id>ci-nexus</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+				<jdk>1.8</jdk>
+			</activation>
+			<properties>
+				<maven.compiler.source>1.8</maven.compiler.source>
+				<maven.compiler.target>1.8</maven.compiler.target>
+				<maven.compiler.compilerVersion>1.8</maven.compiler.compilerVersion>
+			</properties>
+			<repositories>
+				<repository>
+					<id>release</id>
+					<name>release</name>
+					<releases>
+						<enabled>true</enabled>
+						<updatePolicy>always</updatePolicy>
+						<checksumPolicy>warn</checksumPolicy>
+					</releases>
+					<snapshots>
+						<enabled>true</enabled>
+						<updatePolicy>always</updatePolicy>
+						<checksumPolicy>warn</checksumPolicy>
+					</snapshots>
+					<url>https://nexus.hujiuzhou.com/repository/public/</url>
+					<layout>default</layout>
+				</repository>
+			</repositories>
+			<pluginRepositories>
+				<pluginRepository>
+					<id>release</id>
+					<name>release</name>
+					<releases>
+						<enabled>true</enabled>
+						<updatePolicy>always</updatePolicy>
+						<checksumPolicy>warn</checksumPolicy>
+					</releases>
+					<snapshots>
+						<enabled>true</enabled>
+						<updatePolicy>always</updatePolicy>
+						<checksumPolicy>warn</checksumPolicy>
+					</snapshots>
+					<url>https://nexus.hujiuzhou.com/repository/public/</url>
+				</pluginRepository>
+			</pluginRepositories>
+		</profile>
+
+	</profiles>
+	<activeProfiles>
+		<activeProfile>ci-nexus</activeProfile>
+	</activeProfiles>
+
+</settings>

@@ -1,0 +1,25 @@
+docker run --restart=always --name hujz.svn \
+--network hujz \
+-v /data/svn:/svn \
+-v /root/svn/jdbc.properties:/usr/local/tomcat/webapps/admin/WEB-INF/jdbc.properties \
+-v /etc/localtime:/etc/localtime:ro \
+-d fishkj/svn-server:1.7.14
+
+# 创建apache用户，在/etc/passwd末尾增加apahce
+vim /etc/passwd
+apache:x:48:48:Apache:/usr/share/httpd:/sbin/nologin
+
+# 创建组
+groupadd apache
+
+# 登录svn
+# 设置管理员
+# 创建项目
+# 创建用户
+# 为创建的文件夹授权
+
+# 文件授权
+chown -R apache.apache /data/svn/demo
+
+# 重启svn
+docker restart hujz.svn

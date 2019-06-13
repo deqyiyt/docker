@@ -1,0 +1,16 @@
+docker run \
+--restart=always \
+--name hujz.nginx \
+--network hujz \
+-p 80:80 \
+-p 443:443 \
+-v /root/nginx/config/nginx.conf:/etc/nginx/nginx.conf:ro \
+-v /root/nginx/config/conf.d:/etc/nginx/conf.d:ro \
+-v /root/nginx/ssl:/etc/ssl:ro \
+-v /root/nginx/html:/usr/share/nginx/html:ro \
+-v /root/nginx/php/docker-php-session.ini:/usr/local/etc/php/conf.d/docker-php-session.ini \
+-v /data/nginx/www:/www:ro \
+-v /data/php:/php:rw \
+-v /data/php/session:/tmp/session:rw \
+-v /etc/localtime:/etc/localtime:ro \
+-d richarvey/nginx-php-fpm:1.7.2

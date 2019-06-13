@@ -1,0 +1,49 @@
+# 安装docker-compose
+curl -L https://github.com/docker/compose/releases/download/1.18.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+
+# 加权限
+chmod +x /usr/local/bin/docker-compose
+
+# 查看版本
+docker-compose version
+
+cd ~/
+
+# 安装harbor
+github：https://github.com/vmware/harbor
+# 下载安装包
+wget https://storage.googleapis.com/harbor-releases/release-1.8.0/harbor-offline-installer-v1.8.0.tgz
+
+# 解压
+tar zxf harbor-offline-installer-v1.8.0.tgz
+
+# 进入harbor解压目录
+cd harbor
+
+# 修改配置文件
+vim harbor.yml
+hostname: harbor.hujiuzhou.com
+http:
+  port: 2280
+
+# 启动
+sh install.sh
+
+# 关闭
+docker-compose down -v
+  
+# 修改配置
+vim common/config/registry/config.yml
+realm: http://harbor.hujiuzhou.com:2280/service/token
+修改为
+realm: http://harbor.hujiuzhou.com/service/token
+
+# 修改harbor组件名称，所有组件名称前缀为harbor-
+vim docker-compose.yml
+
+# 启动
+docker-compose up -d
+
+
+PS：harbor通过nginx转发之后用域名访问无法创建项目，其他功能OK
+	只能通过ip:post方式去创建项目

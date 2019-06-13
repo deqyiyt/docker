@@ -1,0 +1,8 @@
+docker run --restart=always --name hujz.mysql \
+--network hujz \
+-p 33308:3306 \
+-e MYSQL_ROOT_PASSWORD=IcPE9mR#UnX4auXt \
+-v /root/mysql/my.cnf:/etc/mysql/my.cnf \
+-v /data/mysql/data:/var/lib/mysql \
+-v /etc/localtime:/etc/localtime:ro \
+-d mysql:8.0.15

@@ -1,0 +1,20 @@
+1、购买阿里云虚拟机
+	配置服务器、域名、https
+2、安装docker
+3、安装mysql
+4、安装gitlab
+5、安装jenkins
+     配置jenkins环境
+6、安装nexus
+7、安装svn+svnadmin
+8、安装harbor
+9、安装nginx
+10、安装禅道
+	http://cdn.zentaopm.com/latest/zentao.zip
+11、制作一个springboot helloworld
+     配置maven  settings.xml
+     启动项目
+     代码提交到gitlab
+12、配置jenkins自动发布
+13、编写定时任务清理镜像
+14、后续优化

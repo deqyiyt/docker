@@ -1,0 +1,43 @@
+# 删除系统自带docker，可选
+yum remove docker \
+	docker-client \
+	docker-client-latest \
+	docker-common \
+	docker-latest \
+	docker-latest-logrotate \
+	docker-logrotate \
+	docker-selinux \
+	docker-engine-selinux \
+	docker-engine
+	
+# 安装docker依赖
+yum install -y yum-utils device-mapper-persistent-data lvm2
+
+# 配置阿里云docker源
+yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
+
+# 安装最新docker
+yum install -y docker-ce
+
+# docker开启远程访问
+vim /usr/lib/systemd/system/docker.service
+ExecStart=/usr/bin/dockerd  -H tcp://0.0.0.0:2375  -H unix:///var/run/docker.sock
+
+# 开启http
+vi /etc/docker/daemon.json
+{"insecure-registries" : ["172.19.204.127:2280"]}
+
+# 重新加载docker配置文件
+systemctl daemon-reload 
+
+# docker开机启动
+systemctl enable docker
+
+# 启动docker
+systemctl start docker
+
+# 查看2375端口是否开启
+netstat -nptl
+
+# 添加自定义网络
+docker network create hujz
