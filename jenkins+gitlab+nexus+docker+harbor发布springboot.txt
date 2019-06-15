@@ -1,29 +1,31 @@
-1¡¢¹ºÂò°¢ÀïÔÆĞéÄâ»ú
-	ÅäÖÃ·şÎñÆ÷¡¢ÓòÃû¡¢https
-2¡¢°²×°docker
-3¡¢°²×°mysql
-4¡¢°²×°gitlab
-5¡¢°²×°nginx
-6¡¢°²×°jenkins
-     ÅäÖÃjenkins»·¾³
-7¡¢°²×°nexus
+1ã€è´­ä¹°é˜¿é‡Œäº‘è™šæ‹Ÿæœº
+	é…ç½®æœåŠ¡å™¨ã€åŸŸåã€https
+	é˜¿é‡Œäº‘æ¨å¹¿é“¾æ¥ï¼šhttps://chuangke.aliyun.com/invite?userCode=gr94dspl
+
+2ã€å®‰è£…docker
+3ã€å®‰è£…mysql
+4ã€å®‰è£…gitlab
+5ã€å®‰è£…nginx
+6ã€å®‰è£…jenkins
+     é…ç½®jenkinsç¯å¢ƒ
+7ã€å®‰è£…nexus
 	https
-8¡¢°²×°svn+svnadmin
-9¡¢°²×°harbor
-10¡¢°²×°ìøµÀ
+8ã€å®‰è£…svn+svnadmin
+9ã€å®‰è£…harbor
+10ã€å®‰è£…ç¦…é“
 	http://cdn.zentaopm.com/latest/zentao.zip
-11¡¢ÖÆ×÷Ò»¸öspringboot helloworld
-     ÅäÖÃmaven  settings.xml
-     Æô¶¯ÏîÄ¿
-     ´úÂëÌá½»µ½gitlab
+11ã€åˆ¶ä½œä¸€ä¸ªspringboot helloworld
+     é…ç½®maven  settings.xml
+     å¯åŠ¨é¡¹ç›®
+     ä»£ç æäº¤åˆ°gitlab
 	 https
-12¡¢ÅäÖÃjenkins×Ô¶¯·¢²¼
-	1¡¢ÔÚgitÉÏÀ­È¡ÏîÄ¿
-	2¡¢maven´ò°ü
-	3¡¢¹¹½¨Dockerfile
-	4¡¢·¢²¼ËŞÖ÷»úµÄdocker¾µÏñ
-	5¡¢°ÑËŞÖ÷»úÆ÷µÄdocker¾µÏñ·¢²¼µ½harbor
-	6¡¢sshµ½ÒµÎñ·şÎñÆ÷
-	7¡¢ÔÚÒµÎñ·şÎñÆ÷ÖĞÀ­È¡harborµÄ¾µÏñ²¢·¢²¼
-13¡¢±àĞ´¶¨Ê±ÈÎÎñÇåÀí¾µÏñ
-14¡¢ºóĞøÓÅ»¯
+12ã€é…ç½®jenkinsè‡ªåŠ¨å‘å¸ƒ
+	1ã€åœ¨gitä¸Šæ‹‰å–é¡¹ç›®
+	2ã€mavenæ‰“åŒ…
+	3ã€æ„å»ºDockerfile
+	4ã€å‘å¸ƒå®¿ä¸»æœºçš„dockeré•œåƒ
+	5ã€æŠŠå®¿ä¸»æœºå™¨çš„dockeré•œåƒå‘å¸ƒåˆ°harbor
+	6ã€sshåˆ°ä¸šåŠ¡æœåŠ¡å™¨
+	7ã€åœ¨ä¸šåŠ¡æœåŠ¡å™¨ä¸­æ‹‰å–harborçš„é•œåƒå¹¶å‘å¸ƒ
+13ã€ç¼–å†™å®šæ—¶ä»»åŠ¡æ¸…ç†é•œåƒ
+14ã€åç»­ä¼˜åŒ–
