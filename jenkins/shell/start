@@ -1,15 +1,14 @@
 echo '================执行重启脚本================'
 ids=$(docker images | grep springboot/demo | awk  '{print $3}')
-docker login 172.19.204.127:2280 -u jenkins -p '5J0c|W#$xy<H*:4U'
-docker pull 172.19.204.127:2280/springboot/demo:$BUILD_TIMESTAMP
+docker login 172.19.204.129:2280 -u jenkins -p '2KeI9*&-"hVy(Y6L'
+docker pull 172.19.204.129:2280/springboot/demo:$BUILD_TIMESTAMP
 docker stop $(docker ps -a -q --filter name=spring.demo)
 docker rm $(docker ps -a -q --filter name=spring.demo)
 docker run \
 --restart=always \
 --network hujz \
 --name spring.demo \
--p 80:8080 \
--d 172.19.204.127:2280/springboot/demo:$BUILD_TIMESTAMP
+-d 172.19.204.129:2280/springboot/demo:$BUILD_TIMESTAMP
 if [  -n "$ids" ]; then
 docker rmi $ids
 fi

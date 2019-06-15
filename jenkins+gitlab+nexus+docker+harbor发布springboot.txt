@@ -3,18 +3,27 @@
 2、安装docker
 3、安装mysql
 4、安装gitlab
-5、安装jenkins
+5、安装nginx
+6、安装jenkins
      配置jenkins环境
-6、安装nexus
-7、安装svn+svnadmin
-8、安装harbor
-9、安装nginx
+7、安装nexus
+	https
+8、安装svn+svnadmin
+9、安装harbor
 10、安装禅道
 	http://cdn.zentaopm.com/latest/zentao.zip
 11、制作一个springboot helloworld
      配置maven  settings.xml
      启动项目
      代码提交到gitlab
+	 https
 12、配置jenkins自动发布
+	1、在git上拉取项目
+	2、maven打包
+	3、构建Dockerfile
+	4、发布宿主机的docker镜像
+	5、把宿主机器的docker镜像发布到harbor
+	6、ssh到业务服务器
+	7、在业务服务器中拉取harbor的镜像并发布
 13、编写定时任务清理镜像
 14、后续优化

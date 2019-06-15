@@ -1,18 +1,3 @@
-/*
-Navicat MySQL Data Transfer
-
-Source Server         : ci-server
-Source Server Version : 80015
-Source Host           : 47.101.152.210:33308
-Source Database       : svnadmin
-
-Target Server Type    : MYSQL
-Target Server Version : 80015
-File Encoding         : 65001
-
-Date: 2019-06-13 16:28:18
-*/
-
 SET FOREIGN_KEY_CHECKS=0;
 
 -- ----------------------------

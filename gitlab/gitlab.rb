@@ -463,7 +463,7 @@ gitlab_rails['smtp_enable'] = true
 gitlab_rails['smtp_address'] = "smtp.qq.com"
 gitlab_rails['smtp_port'] = 465
 gitlab_rails['smtp_user_name'] = "89402437@qq.com"
-gitlab_rails['smtp_password'] = "qjneegsstjgbbiji"
+gitlab_rails['smtp_password'] = "vrdbqlfyzqixbhbf"
 gitlab_rails['smtp_domain'] = "https://mail.qq.com"
 gitlab_rails['smtp_authentication'] = "login"
 gitlab_rails['smtp_enable_starttls_auto'] = true
@@ -682,7 +682,7 @@ sidekiq['listen_port'] = 8015
 ###! By default, reconfigure reloads postgresql if it is running. If you
 ###! change any of these settings, be sure to run `gitlab-ctl restart postgresql`
 ###! after reconfigure in order for the changes to take effect.
-# postgresql['enable'] = false
+# postgresql['enable'] = true
 # postgresql['listen_address'] = nil
 # postgresql['port'] = 5432
 # postgresql['data_dir'] = "/var/opt/gitlab/postgresql/data"

@@ -12,6 +12,10 @@ apache:x:48:48:Apache:/usr/share/httpd:/sbin/nologin
 # 创建组
 groupadd apache
 
+# 设置仓库路径的用户权限
+chown -R apache.apache /data/svn
+
+
 # 登录svn
 # 设置管理员
 # 创建项目
@@ -19,7 +23,7 @@ groupadd apache
 # 为创建的文件夹授权
 
 # 文件授权
-chown -R apache.apache /data/svn/demo
+chown -R apache.apache /data/svn/test
 
 # 重启svn
 docker restart hujz.svn

@@ -38,6 +38,11 @@ realm: http://harbor.hujiuzhou.com:2280/service/token
 修改为
 realm: http://harbor.hujiuzhou.com/service/token
 
+vim common/config/core/env 
+EXT_ENDPOINT=http://harbor.hujiuzhou.com:2280
+修改为
+EXT_ENDPOINT=http://harbor.hujiuzhou.com
+
 # 修改harbor组件名称，所有组件名称前缀为harbor-
 vim docker-compose.yml
 

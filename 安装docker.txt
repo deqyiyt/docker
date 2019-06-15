@@ -25,7 +25,7 @@ ExecStart=/usr/bin/dockerd  -H tcp://0.0.0.0:2375  -H unix:///var/run/docker.soc
 
 # 开启http
 vi /etc/docker/daemon.json
-{"insecure-registries" : ["172.19.204.127:2280"]}
+{"insecure-registries" : ["172.19.204.129:2280"]}
 
 # 重新加载docker配置文件
 systemctl daemon-reload 
