@@ -19,6 +19,12 @@ yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/d
 # 安装最新docker
 yum install -y docker-ce
 
+# docker开机启动
+systemctl enable docker
+
+# 启动docker
+systemctl start docker
+
 # docker开启远程访问
 vim /usr/lib/systemd/system/docker.service
 ExecStart=/usr/bin/dockerd  -H tcp://0.0.0.0:2375  -H unix:///var/run/docker.sock
@@ -30,10 +36,7 @@ vi /etc/docker/daemon.json
 # 重新加载docker配置文件
 systemctl daemon-reload 
 
-# docker开机启动
-systemctl enable docker
-
-# 启动docker
+# 重启docker
 systemctl start docker
 
 # 查看2375端口是否开启
